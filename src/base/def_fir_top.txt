@@ -1,13 +1,15 @@
 LIST firlistBUILD_NUM.txt
 
+##filter 0
 ##parallel FIR
 BUILD
-  SWAP ORDER 3
-  SWAP COEFF_BITS 12
-  SWAP DIN_BITS 8
-  SWAP MAC_NUM 4
+  SWAP ORDER 3           ## filter order
+  SWAP COEFF_BITS 12     ## coefficient bits
+  SWAP DIN_BITS 8        ## data bits
+  SWAP MAC_NUM 4         ## number of multiplier-accumulators
 ENDBUILD
 
+##filter 1
 ##Nserial FIR
 BUILD
   SWAP ORDER 3
@@ -16,6 +18,7 @@ BUILD
   SWAP MAC_NUM 2
 ENDBUILD
 
+##filter 2
 ##serial FIR
 BUILD
   SWAP ORDER 7
