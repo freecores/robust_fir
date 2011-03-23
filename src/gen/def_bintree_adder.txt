@@ -1,0 +1,4 @@
+
+CHECK CONST (INPUT_NUM)
+
+SWAP ADD_STAGES LOG2(INPUT_NUM)                ##number of binary tree adder stages

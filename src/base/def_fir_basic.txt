@@ -1,0 +1,14 @@
+
+##check all input parameters have been given
+CHECK CONST(ORDER)
+CHECK CONST(COEFF_BITS)
+CHECK CONST(DIN_BITS)
+
+SWAP NAME MAC_NUM_TOPO                         ##name of top module and file
+SWAP INPUT_BITS DIN_BITS_COEFF_BITS            ##input sizes
+SWAP TOPO ORDER_INPUT_BITS                     ##topology
+
+SWAP COEFF_NUM EXPR(ORDER+1)                   ##number of coefficients
+SWAP ADD_STAGES LOG2(COEFF_NUM)                ##number of binary tree adder stages
+SWAP MULT_BITS EXPR(COEFF_BITS+DIN_BITS)       ##bits of mult product
+SWAP DOUT_BITS EXPR(MULT_BITS+ADD_STAGES)      ##bits of output data (lossless)

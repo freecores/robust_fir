@@ -1,0 +1,15 @@
+INCLUDE def_fir_basic.txt
+
+##check all input parameters have been given
+CHECK CONST(MAC_NUM)
+
+SWAP SON_DELAY  EXPR(COEFF_NUM/MAC_NUM)         ##input delay per son
+SWAP SON_COEFF  MAC_NUM                         ##number of son coefficients
+SWAP SON_STAGES LOG2(SON_DELAY)                 ##number of binary tree adder stages
+SWAP SON_DOUT   EXPR(MULT_BITS+SON_STAGES)      ##bits of son output
+SWAP ADD_DOUT   EXPR(SON_DOUT+LOG2(MAC_NUM))    ##bits of adder output
+
+VERIFY(EXPR(COEFF_NUM%MAC_NUM)==0) else MAC number (multiplayers) must be a division of the coefficient number (FIR order+1)
+VERIFY(MAC_NUM>1)                  else MAC number must be larger than 1 (try using fir_serial.v)
+VERIFY(MAC_NUM<COEFF_NUM)          else MAC number must be smaller than coefficient number (try using fir_parallel.v)
+
