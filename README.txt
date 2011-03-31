@@ -2,6 +2,10 @@
 ------------------------------ Remark ----------------------------------------
 This code is a generic code written in RobustVerilog. In order to convert it to Verilog a RobustVerilog parser is required. 
 It is possible to download a free RobustVerilog parser from www.provartec.com/edatools.
+
+We will be very happy to receive any kind of feedback regarding our tools and cores. 
+We will also be willing to support any company intending to integrate our cores into their project.
+For any questions / remarks / suggestions / bugs please contact info@provartec.com.
 ------------------------------------------------------------------------------
 
 RobustVerilog generic FIR filter
@@ -18,4 +22,3 @@ The default definition file def_fir_top.txt generates 3 filters, 1 parallel, 1 s
 
 Changing the interconnect parameters should be made only in def_fir_top.txt in the src/base directory (changing multiplier number, filter order etc.).
 
-For any questions / remarks / suggestions / bugs please contact info@provartec.com.
