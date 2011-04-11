@@ -27,6 +27,7 @@
 ////                                                             ////
 //////////////////////////////////////////////////////////////////##>
 
+OUTDIR  fir_NAME
 OUTFILE fir_NAME.v
 INCLUDE def_fir.txt
 

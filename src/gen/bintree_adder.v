@@ -64,7 +64,7 @@ LOOP SX ADD_STAGES
 ENDLOOP SX
 	
 	wire valid_dSX;
-    CREATE prgen_delayN.v def_delayN.txt DEFCMD(SWAP DELAY 1)
+    CREATE prgen_delayN.v DEFCMD(SWAP DELAY 1)
 	prgen_delay1 #(1) delay_validSX(clk, reset, valid_dSX, valid_dEXPR(SX+1));
 	assign valid_d0 = valid_in;
 	assign valid_out = valid_dADD_STAGES;
