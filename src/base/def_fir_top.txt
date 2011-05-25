@@ -30,7 +30,7 @@
 LIST firlistBUILD_NUM.txt
 
 SWAP MODEL_NAME FIR
-  
+
 ##filter 0
 ##parallel FIR
 BUILD

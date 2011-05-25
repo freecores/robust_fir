@@ -40,3 +40,6 @@ SWAP COEFF_NUM EXPR(ORDER+1)                   ##number of coefficients
 SWAP ADD_STAGES LOG2(COEFF_NUM)                ##number of binary tree adder stages
 SWAP MULT_BITS EXPR(COEFF_BITS+DIN_BITS)       ##bits of mult product
 SWAP DOUT_BITS EXPR(MULT_BITS+ADD_STAGES)      ##bits of output data (lossless)
+
+##macros
+SWAP MAC_EQ(X) TRUE(MAC_NUM==X)
