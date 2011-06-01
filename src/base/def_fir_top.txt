@@ -29,7 +29,7 @@
 
 LIST firlistBUILD_NUM.txt
 
-SWAP MODEL_NAME FIR
+SWAP.GLOBAL MODEL_NAME FIR
 
 ##filter 0
 ##parallel FIR
@@ -45,7 +45,7 @@ ENDBUILD
 BUILD
   SWAP.USER ORDER 3           ## filter order
   SWAP.USER COEFF_BITS 16     ## coefficient bits
-  SWAP.USER DIN_BITS 24        ## data bits
+  SWAP.USER DIN_BITS 24       ## data bits
   SWAP.USER MAC_NUM 2         ## number of multiplier-accumulators
 ENDBUILD
 
@@ -53,7 +53,7 @@ ENDBUILD
 ##serial FIR
 BUILD
   SWAP.USER ORDER 7           ## filter order
-  SWAP.USER COEFF_BITS 8     ## coefficient bits
+  SWAP.USER COEFF_BITS 8      ## coefficient bits
   SWAP.USER DIN_BITS 32       ## data bits
   SWAP.USER MAC_NUM 1         ## number of multiplier-accumulators
 ENDBUILD

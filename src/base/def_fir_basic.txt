@@ -32,7 +32,7 @@ CHECK CONST(ORDER)
 CHECK CONST(COEFF_BITS)
 CHECK CONST(DIN_BITS)
 
-SWAP NAME MAC_NUM_TOPO                         ##name of top module and file
+SWAP NAME MAC_NUM_TOPO                       ##name of top module and file
 SWAP INPUT_BITS DIN_BITS_COEFF_BITS            ##input sizes
 SWAP TOPO ORDER_INPUT_BITS                     ##topology
 
