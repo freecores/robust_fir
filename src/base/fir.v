@@ -31,6 +31,8 @@ OUTDIR  fir_NAME
 OUTFILE fir_NAME.v
 INCLUDE def_fir.txt
 
+ LIST firlist_NAME.txt 
+
 ITER CX COEFF_NUM
 
 ##  Expected RobustVerilog parameters:

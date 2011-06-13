@@ -27,11 +27,19 @@
 ////                                                             ////
 //////////////////////////////////////////////////////////////////##>
 
-ITER DX DELAY
 
 OUTFILE prgen_NAME.v
-INCLUDE def_delayN.txt
 
+STARTDEF
+IFDEF CLKEN
+SWAP NAME delayDELAY_en
+ELSE CLKEN
+SWAP NAME delayDELAY
+ENDIF CLKEN
+ENDDEF
+  
+ITER DX DELAY
+  
 module prgen_NAME(PORTS);
    parameter          WIDTH = 1;
    

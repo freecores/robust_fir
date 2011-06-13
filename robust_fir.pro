@@ -1,7 +1,7 @@
-##RobustVerilog project 
+PROJDIR = run 
 
-SRCFILE = fir.v
-DEFFILE = def_fir_top.txt
+SRCFILE = fir_top.v
+DEFFILE =
 
 OUTDIR  = out
 

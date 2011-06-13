@@ -71,8 +71,8 @@ module fir_parallel_TOPO (PORTS);
 	    end
 
 	//Pipline the output additions
-	CREATE bintree_adder.v DEFCMD(SWAP INPUT_NUM COEFF_NUM)
-	bintree_adder_COEFF_NUM #(MULT_BITS) bintree_adder(
+	CREATE prgen_bintree_adder.v DEFCMD(SWAP INPUT_NUM COEFF_NUM)
+	prgen_bintree_adder_COEFF_NUM #(MULT_BITS) prgen_bintree_adder(
 		.clk(clk),
 		.reset(reset),
 		.data_inCX(multCX),
