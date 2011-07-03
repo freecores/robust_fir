@@ -27,7 +27,7 @@
 ////                                                             ////
 //////////////////////////////////////////////////////////////////##>
 
-OUTFILE fir_MAC_NUMserial_TOPO.v
+OUTFILE PREFIX_MAC_NUMserial_TOPO.v
 
 ITER CX COEFF_NUM
 ITER MX MAC_NUM
@@ -43,7 +43,7 @@ ITER DX SON_DELAY
 //    Number of multiplayers    = MAC_NUM
 
 
-module fir_MAC_NUMserial_TOPO (PORTS);
+module PREFIX_MAC_NUMserial_TOPO (PORTS);
    
     input clk;
     input reset;
@@ -69,7 +69,7 @@ module fir_MAC_NUMserial_TOPO (PORTS);
 	//the FIR sons
 LOOP MX MAC_NUM
 	CREATE fir_serial.v def_fir_basic.txt DEFCMD(SWAP CONST(ORDER) EXPR(SON_DELAY-1)) DEFCMD(SWAP CONST(COEFF_BITS) COEFF_BITS) DEFCMD(SWAP CONST(DIN_BITS) DIN_BITS)
-    fir_serial_EXPR(SON_DELAY-1)_INPUT_BITS firMX
+    PREFIX_serial_EXPR(SON_DELAY-1)_INPUT_BITS PREFIXMX
 								(
 								.clk(clk), 
 								.reset(reset), 

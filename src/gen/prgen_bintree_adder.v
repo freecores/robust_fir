@@ -26,7 +26,6 @@
 //// details. http://www.gnu.org/licenses/lgpl.html              ////
 ////                                                             ////
 //////////////////////////////////////////////////////////////////##>
-
 OUTFILE prgen_bintree_adder_INPUT_NUM.v
 
 STARTDEF  
@@ -55,9 +54,9 @@ module prgen_bintree_adder_INPUT_NUM(PORTS);
 	ENDLOOP EX
 	STOMP LINE
 		
-	wire [BITS-1:0] sum_stageADD_STAGES_TX;
 
-	LOOP TX EXPR(2^LOG2(INPUT_NUM))
+	LOOP TX EXPR(2^LOG2(INPUT_NUM)) ##round up
+	wire [BITS-1:0] sum_stageADD_STAGES_TX;
 	assign sum_stageADD_STAGES_TX = data_inTX;
 	ENDLOOP TX
 	

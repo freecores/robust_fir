@@ -27,12 +27,10 @@
 ////                                                             ////
 //////////////////////////////////////////////////////////////////##>
 
-REQUIRE(1.4)
+REQUIRE(1.5)
 
 INCLUDE def_fir_basic.txt
 
-STARTUSER
-  
 SWAP.GLOBAL   #FFD    #1        ##Flip-Flop simulation delay
 
 ##check all input parameters have been given

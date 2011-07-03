@@ -27,7 +27,7 @@
 ////                                                             ////
 //////////////////////////////////////////////////////////////////##>
 
-OUTFILE fir_serial_TOPO.v
+OUTFILE PREFIX_serial_TOPO.v
 
 ITER OX ORDER
 ITER CX COEFF_NUM
@@ -40,7 +40,7 @@ ITER SX ADD_STAGES
 //    Coefficient Precision    = COEFF_BITS
 //    Sum of Products Latency  = LATENCY
 
-module fir_serial_TOPO (PORTS);
+module PREFIX_serial_TOPO (PORTS);
 			
 	input  clk;
 	input  reset;

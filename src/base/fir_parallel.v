@@ -27,7 +27,7 @@
 ////                                                             ////
 //////////////////////////////////////////////////////////////////##>
 
-OUTFILE fir_parallel_TOPO.v
+OUTFILE PREFIX_parallel_TOPO.v
 
 ITER OX ORDER
 ITER CX COEFF_NUM
@@ -41,7 +41,7 @@ ITER SX ADD_STAGES
 //    Sum of Products Latency  = LATENCY
 //    Number of multiplayers   = COEFF_NUM
 
-module fir_parallel_TOPO (PORTS);
+module PREFIX_parallel_TOPO (PORTS);
 			
 	input  clk;
 	input  reset;

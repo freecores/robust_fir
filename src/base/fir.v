@@ -27,8 +27,8 @@
 ////                                                             ////
 //////////////////////////////////////////////////////////////////##>
 
-OUTDIR  fir_NAME
-OUTFILE fir_NAME.v
+OUTDIR  PREFIX_NAME
+OUTFILE PREFIX_NAME.v
 INCLUDE def_fir.txt
 
  LIST firlist_NAME.txt 
@@ -52,7 +52,7 @@ ITER CX COEFF_NUM
 //    Sum of Products Latency   = LATENCY
 
 
-module fir_NAME (PORTS);
+module PREFIX_NAME (PORTS);
 			
    input                            clk;
    input                            reset;
@@ -65,16 +65,16 @@ module fir_NAME (PORTS);
 	
 IFDEF MAC_EQ(1)
   CREATE fir_serial.v def_fir_basic.txt DEFCMD(SWAP CONST(ORDER) ORDER) DEFCMD(SWAP CONST(COEFF_BITS) COEFF_BITS) DEFCMD(SWAP CONST(DIN_BITS) DIN_BITS)
-  fir_serial_TOPO fir(clk, reset, valid_in, CONCAT.REV(kCX ,), data_in, data_out, valid_out);
+  PREFIX_serial_TOPO PREFIX(clk, reset, valid_in, CONCAT.REV(kCX ,), data_in, data_out, valid_out);
   
 ELSE MAC_EQ(1)
   IFDEF MAC_EQ(COEFF_NUM)
   CREATE fir_parallel.v def_fir_basic.txt DEFCMD(SWAP CONST(ORDER) ORDER) DEFCMD(SWAP CONST(COEFF_BITS) COEFF_BITS) DEFCMD(SWAP CONST(DIN_BITS) DIN_BITS)
-  fir_parallel_TOPO fir(clk, reset, valid_in, CONCAT.REV(kCX ,), data_in, data_out, valid_out);
+  PREFIX_parallel_TOPO PREFIX(clk, reset, valid_in, CONCAT.REV(kCX ,), data_in, data_out, valid_out);
   
   ELSE MAC_EQ(COEFF_NUM)
   CREATE fir_Nserial.v def_fir_Nserial.txt DEFCMD(SWAP CONST(ORDER) ORDER) DEFCMD(SWAP CONST(COEFF_BITS) COEFF_BITS) DEFCMD(SWAP CONST(DIN_BITS) DIN_BITS) DEFCMD(SWAP CONST(MAC_NUM) MAC_NUM)
-  fir_MAC_NUMserial_TOPO fir(clk, reset, valid_in, CONCAT.REV(kCX ,), data_in, data_out, valid_out);
+  PREFIX_MAC_NUMserial_TOPO PREFIX(clk, reset, valid_in, CONCAT.REV(kCX ,), data_in, data_out, valid_out);
   
   ENDIF MAC_EQ(COEFF_NUM)
 ENDIF MAC_EQ(1)
